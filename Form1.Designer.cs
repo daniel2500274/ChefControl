@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             Maintitle = new Label();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
+            UserButtonImage = new PictureBox();
+            AdminUserButtonImage = new PictureBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)UserButtonImage).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AdminUserButtonImage).BeginInit();
             SuspendLayout();
             // 
             // Maintitle
@@ -45,19 +45,21 @@
             resources.ApplyResources(Maintitle, "Maintitle");
             Maintitle.Name = "Maintitle";
             // 
-            // pictureBox1
+            // UserButtonImage
             // 
-            pictureBox1.Image = Properties.Resources.orderButtonUser;
-            resources.ApplyResources(pictureBox1, "pictureBox1");
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.TabStop = false;
+            UserButtonImage.Image = Properties.Resources.orderButtonUser;
+            resources.ApplyResources(UserButtonImage, "UserButtonImage");
+            UserButtonImage.Name = "UserButtonImage";
+            UserButtonImage.TabStop = false;
+            UserButtonImage.Click += UserButtonImage_Click;
             // 
-            // pictureBox2
+            // AdminUserButtonImage
             // 
-            pictureBox2.Image = Properties.Resources.administratorIcon;
-            resources.ApplyResources(pictureBox2, "pictureBox2");
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.TabStop = false;
+            AdminUserButtonImage.Image = Properties.Resources.administratorIcon;
+            resources.ApplyResources(AdminUserButtonImage, "AdminUserButtonImage");
+            AdminUserButtonImage.Name = "AdminUserButtonImage";
+            AdminUserButtonImage.TabStop = false;
+            AdminUserButtonImage.Click += AdminUserButtonImage_Click;
             // 
             // label1
             // 
@@ -88,13 +90,13 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
+            Controls.Add(AdminUserButtonImage);
+            Controls.Add(UserButtonImage);
             Controls.Add(Maintitle);
             Name = "MainForm";
             Load += MainForm_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)UserButtonImage).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AdminUserButtonImage).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -102,8 +104,8 @@
         #endregion
 
         private Label Maintitle;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
+        private PictureBox UserButtonImage;
+        private PictureBox AdminUserButtonImage;
         private Label label1;
         private Label label2;
         private Label label3;
