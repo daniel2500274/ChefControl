@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ChefControl.Models
-{ 
-    public class Category
+{
+    public class Dish
     {
         public int Id { get; set; }
-        public string Nombre { get; set; } = string.Empty;
+        public string Name { get; set; } 
+        public Category Category { get; set; }
+        public decimal Price { get; set; }
     }
 }

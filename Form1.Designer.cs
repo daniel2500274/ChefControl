@@ -85,7 +85,7 @@
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightCyan;
+            BackColor = Color.White;
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
