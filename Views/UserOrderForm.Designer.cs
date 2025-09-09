@@ -35,6 +35,12 @@
             dataGridView1 = new DataGridView();
             label2 = new Label();
             button1 = new Button();
+            categoriesFood = new ComboBox();
+            label3 = new Label();
+            listBox1 = new ListBox();
+            label4 = new Label();
+            label5 = new Label();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -51,48 +57,112 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Cooper Black", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(364, 9);
+            label1.Location = new Point(416, 12);
             label1.Name = "label1";
-            label1.Size = new Size(87, 21);
+            label1.Size = new Size(110, 27);
             label1.TabIndex = 0;
             label1.Text = "Menu 🛎️";
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(321, 52);
+            dataGridView1.Location = new Point(367, 94);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(467, 344);
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(534, 434);
             dataGridView1.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(321, 415);
+            label2.Location = new Point(367, 553);
             label2.Name = "label2";
-            label2.Size = new Size(151, 15);
+            label2.Size = new Size(189, 20);
             label2.TabIndex = 2;
             label2.Text = "Purchase Total   Total Items";
             // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(192, 255, 255);
-            button1.Location = new Point(673, 415);
+            button1.Location = new Point(769, 553);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(115, 23);
+            button1.Size = new Size(131, 31);
             button1.TabIndex = 3;
             button1.Text = "Confirm Order";
             button1.UseVisualStyleBackColor = false;
             // 
+            // categoriesFood
+            // 
+            categoriesFood.FormattingEnabled = true;
+            categoriesFood.Location = new Point(12, 94);
+            categoriesFood.Name = "categoriesFood";
+            categoriesFood.Size = new Size(297, 28);
+            categoriesFood.TabIndex = 4;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 69);
+            label3.Name = "label3";
+            label3.Size = new Size(118, 20);
+            label3.TabIndex = 5;
+            label3.Text = "Food Categories";
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new Point(12, 164);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(324, 364);
+            listBox1.TabIndex = 6;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(12, 134);
+            label4.Name = "label4";
+            label4.Size = new Size(121, 20);
+            label4.TabIndex = 7;
+            label4.Text = "Select your food:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(556, 61);
+            label5.Name = "label5";
+            label5.Size = new Size(176, 28);
+            label5.TabIndex = 8;
+            label5.Text = "Order sumary 📑";
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Green;
+            button2.Location = new Point(13, 541);
+            button2.Name = "button2";
+            button2.Size = new Size(136, 35);
+            button2.TabIndex = 9;
+            button2.Text = "Add to order";
+            button2.UseVisualStyleBackColor = false;
+            // 
             // UserOrderForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
+            Controls.Add(button2);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(listBox1);
+            Controls.Add(label3);
+            Controls.Add(categoriesFood);
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "UserOrderForm";
             Text = "UserOrderForm";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -107,5 +177,11 @@
         private DataGridView dataGridView1;
         private Label label2;
         private Button button1;
+        private ComboBox categoriesFood;
+        private Label label3;
+        private ListBox listBox1;
+        private Label label4;
+        private Label label5;
+        private Button button2;
     }
 }
