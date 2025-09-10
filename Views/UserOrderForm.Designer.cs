@@ -1,4 +1,6 @@
-﻿namespace ChefControl.Views
+﻿using ChefControl.Data;
+
+namespace ChefControl.Views
 {
     partial class UserOrderForm
     {
@@ -41,6 +43,8 @@
             label4 = new Label();
             label5 = new Label();
             button2 = new Button();
+            textBox1 = new TextBox();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -84,7 +88,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(192, 255, 255);
+            button1.BackColor = Color.Cyan;
             button1.Location = new Point(769, 553);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
@@ -100,6 +104,11 @@
             categoriesFood.Name = "categoriesFood";
             categoriesFood.Size = new Size(297, 28);
             categoriesFood.TabIndex = 4;
+            var defaultCategories = InMemoryDB.Categories.Select(f => f.Nombre).ToList();
+            foreach (var item in defaultCategories)
+            {
+                categoriesFood.Items.Add(item);
+            }
             // 
             // label3
             // 
@@ -115,7 +124,7 @@
             listBox1.FormattingEnabled = true;
             listBox1.Location = new Point(12, 164);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(324, 364);
+            listBox1.Size = new Size(324, 304);
             listBox1.TabIndex = 6;
             // 
             // label4
@@ -147,11 +156,31 @@
             button2.Text = "Add to order";
             button2.UseVisualStyleBackColor = false;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(13, 501);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(323, 27);
+            textBox1.TabIndex = 10;
+            textBox1.Text = "Cantidad";
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.IndianRed;
+            button3.Location = new Point(200, 541);
+            button3.Name = "button3";
+            button3.Size = new Size(136, 35);
+            button3.TabIndex = 11;
+            button3.Text = "Del from order";
+            button3.UseVisualStyleBackColor = false;
+            // 
             // UserOrderForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
+            Controls.Add(button3);
+            Controls.Add(textBox1);
             Controls.Add(button2);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -183,5 +212,7 @@
         private Label label4;
         private Label label5;
         private Button button2;
+        private TextBox textBox1;
+        private Button button3;
     }
 }

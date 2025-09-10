@@ -12,9 +12,9 @@ namespace ChefControl.Data
     {
         //Initialize a empty list to simulate a DataBase
         private static int _orderId = 0;
-        public static List<OrderBill> OrderBill = new List<OrderBill>();
-        public static List<Dish> Dishes { get; } = new List<Dish>();
-        public static List<Category> Categories{ get; } = new List<Category>();
-        public static List<Order> Orders { get; } = new List<Order>(); 
+        public static List<OrderBill> OrderBill = new();
+        public static List<Dish> Dishes { get; } = new();
+        public static List<Category> Categories{ get; } = new();
+        public static List<Order> Orders { get; } = new(); 
     }
 }
