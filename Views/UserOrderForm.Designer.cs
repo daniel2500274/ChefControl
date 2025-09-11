@@ -39,7 +39,7 @@ namespace ChefControl.Views
             button1 = new Button();
             categoriesFood = new ComboBox();
             label3 = new Label();
-            listBox1 = new ListBox();
+            dishesOptionsByCategory = new ListBox();
             label4 = new Label();
             label5 = new Label();
             button2 = new Button();
@@ -104,11 +104,6 @@ namespace ChefControl.Views
             categoriesFood.Name = "categoriesFood";
             categoriesFood.Size = new Size(297, 28);
             categoriesFood.TabIndex = 4;
-            var defaultCategories = InMemoryDB.Categories.Select(f => f.Nombre).ToList();
-            foreach (var item in defaultCategories)
-            {
-                categoriesFood.Items.Add(item);
-            }
             // 
             // label3
             // 
@@ -119,13 +114,13 @@ namespace ChefControl.Views
             label3.TabIndex = 5;
             label3.Text = "Food Categories";
             // 
-            // listBox1
+            // dishesOptionsByCategory
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(12, 164);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(324, 304);
-            listBox1.TabIndex = 6;
+            dishesOptionsByCategory.FormattingEnabled = true;
+            dishesOptionsByCategory.Location = new Point(12, 164);
+            dishesOptionsByCategory.Name = "dishesOptionsByCategory";
+            dishesOptionsByCategory.Size = new Size(324, 304);
+            dishesOptionsByCategory.TabIndex = 6;
             // 
             // label4
             // 
@@ -184,7 +179,7 @@ namespace ChefControl.Views
             Controls.Add(button2);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(listBox1);
+            Controls.Add(dishesOptionsByCategory);
             Controls.Add(label3);
             Controls.Add(categoriesFood);
             Controls.Add(button1);
@@ -208,7 +203,7 @@ namespace ChefControl.Views
         private Button button1;
         private ComboBox categoriesFood;
         private Label label3;
-        private ListBox listBox1;
+        private ListBox dishesOptionsByCategory;
         private Label label4;
         private Label label5;
         private Button button2;

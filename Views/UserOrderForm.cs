@@ -1,13 +1,7 @@
-﻿using ChefControl.Models;
-using ChefControl.Data;
+﻿using ChefControl.Data;
+using ChefControl.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ChefControl.Views
@@ -16,8 +10,24 @@ namespace ChefControl.Views
     {
         public UserOrderForm()
         {
-         
             InitializeComponent();
+            categoriesFood.Items.AddRange(InMemoryDB.Categories.Select(c => c.Name).ToArray());
+            categoriesFood.SelectedIndexChanged += CategoriesFood_SelectedIndexChanged;
+        }
+
+        private void CategoriesFood_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedCategoryName = categoriesFood.SelectedItem?.ToString();
+
+            if (selectedCategoryName != null)
+            {
+                var dishesInCategory = InMemoryDB.Dishes
+                    .Where(dish => dish.Category.Name == selectedCategoryName)
+                    .ToList();
+
+                dishesOptionsByCategory.DataSource = dishesInCategory;
+                dishesOptionsByCategory.DisplayMember = "Name";
+            }
         }
     }
 }

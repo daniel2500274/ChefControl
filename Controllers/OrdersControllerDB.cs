@@ -66,7 +66,7 @@ namespace ChefControl.Controllers
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("Category name cannot be empty.");
 
-            var newCategory = new Category { Id = id, Nombre = name };
+            var newCategory = new Category { Id = id, Name = name };
             InMemoryDB.Categories.Add(newCategory);
         }
 
@@ -84,7 +84,7 @@ namespace ChefControl.Controllers
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("Category name cannot be empty.");
 
-            category.Nombre = name;
+            category.Name = name;
         }
 
         public void DeleteCategory(int id)
